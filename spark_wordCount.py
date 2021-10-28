@@ -24,11 +24,13 @@ urls=['http://www.gutenberg.ca/ebooks/buchanj-midwinter/buchanj-midwinter-00-t.t
 book_titles=['buchanj-midwinter-00-t.txt','carman-farhorizons-00-t.txt','colby-champlain-00-t.txt','cheyneyp-darkbahama-00-t.txt','delamare-bumps-00-t.txt',
               'charlesworth-scene-00-t.txt','delamare-lucy-00-t.txt','delamare-myfanwy-00-t.txt','delamare-penny-00-t.txt']
 exec_time_list=[]
-spark.sparkContext.addFile(urls[i])
+spark = SparkSession.builder.getOrCreate()
+
+for j in range(len(urls)):
+  spark.sparkContext.addFile(urls[j])
 
 for _ in range(3):
   start = time.time()
-  spark = SparkSession.builder.getOrCreate()
 
   for i in range(len(book_titles)):
 
