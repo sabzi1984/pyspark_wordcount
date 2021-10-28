@@ -18,6 +18,7 @@ def map_words(row):
 def reduce_words(value1, value2):
     return value1+value2
 
+exec_time_list=[]
 
 for _ in range(3):
   start = time.time()
