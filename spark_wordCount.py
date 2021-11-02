@@ -51,8 +51,8 @@ for i in range(len(book_titles)):
   book_rdd = book_rdd.reduceByKey(reduce_words)
   # print(book1_rdd.collect())
 
-  # book_rdd.toDF(["word", "count_word"]).show()
-  yield(book_rdd.toDF(["word", "count_word"]))
+  book_rdd.toDF(["word", "count_word"]).show()
+  # yield(book_rdd.toDF(["word", "count_word"]))
 
 
 
