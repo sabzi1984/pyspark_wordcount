@@ -3,6 +3,7 @@ from pyspark.sql import SparkSession
 from pyspark import SparkFiles
 import time
 import sys
+import csv
 
 
 
@@ -15,9 +16,16 @@ def map_words(row):
 def reduce_words(value1, value2):
     return value1+value2
 
-    
+try:
+    if (sys.argv[1] == '-'):
+        f = sys.stdin.read()
+    else:
+        filename = sys.argv[1]
+        f = open(filename, 'r')
+    book = csv.reader(f)
+
 spark = SparkSession.builder.getOrCreate()
-book = spark.read.csv(sys.stdin, header=False)
+# book = spark.read.csv(sys.stdin, header=False)
 # start_add_file_time = time.time()
 
 book_rdd = book.rdd
