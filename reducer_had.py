@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """reducer.py"""
 
 from operator import itemgetter
@@ -31,10 +30,10 @@ for line in sys.stdin:
     else:
         if current_word:
             # write result to STDOUT
-            print '%s\t%s' % (current_word, current_count)
+            print('%s\t%s' % (current_word, current_count))
         current_count = count
         current_word = word
 
 # do not forget to output the last word if needed!
 if current_word == word:
-    print '%s\t%s' % (current_word, current_count)
+    print('%s\t%s' % (current_word, current_count))
