@@ -1,5 +1,4 @@
-"""reducer.py"""
-#!/usr/bin/env python3
+#!/usr/bin/python3
 from operator import itemgetter
 import sys
 
@@ -37,3 +36,7 @@ for line in sys.stdin:
 # do not forget to output the last word if needed!
 if current_word == word:
     print('%s\t%s' % (current_word, current_count))
+    
+    
+    
+    
